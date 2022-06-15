@@ -127,7 +127,7 @@ const getStatName = (arr, minBaseStat) => {
   // Solution code here...
   let nameArr = arr.filter(name => {
     if (name.baseStat > minBaseStat){
-      name.stat.name;
+      return name.stat.name;
     }
   });
   return nameArr;
@@ -199,7 +199,7 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
   let stretchArr = arr.filter(Number);
-  let oddEvenArr = stretchArr.filter(num => {
+  let oddEvenArr = stretchArr.map(num => {
     if(num % 2 === 0){
       return 'even';
     } else if (num % 2 !== 0){
