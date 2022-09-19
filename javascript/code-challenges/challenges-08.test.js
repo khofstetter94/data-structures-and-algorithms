@@ -53,18 +53,20 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
-  return charArray.sort((a,b) => {
-    let diff = a.children.length - b.children.length;
-    if (diff === 0){
-      if (a.house > b.house) {
-        return 1;
-      } else {
+  charArray.sort((a,b) => {
+    if(a.children.length === b.children.length){
+      const nameA = a.house.toUpperCase();
+      const nameB = b.house.toUpperCase();
+      if (nameA < nameB) {
         return -1;
       }
+      if (nameA > nameB) {
+        return 1;
+      }
     }
-    return diff;
+    return a.children.length - b.children.length;
   });
+  return charArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,8 +78,8 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
-  let regex = /w/;
-  return(regex.test(str));
+  let regex = /w/gm;
+  return regex.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,8 +96,8 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  let regex = /\d/g;
-  return(regex.test(input));
+  let regex = /\d/gm;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,8 +109,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
-  let regex = /world\b/g;
-  return(regex.test(input));
+  let regex = /(world)/gm;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,12 +123,12 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-  let regex = /[A-Z]\w+/g;
-  let result = str.match(regex);
-  if (result === null){
-    return [];
-  }
-  return result;
+  let final = [];
+  let regex = /[A-Z]\w*/gm;
+  if(str.match(regex) === null){
+    return final = [];
+  }else{final = str.match(regex);}
+  return final;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,11 +139,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let thisone = arr.filter(word => {
-    let regex = /^[a-jA-J]\w+/g;
-    return regex.test(word);
-  });
-  return thisone;
+  let final = [];
+  let regex = /^[A-J]\w*/gm;
+  for( let i = 0; i < arr.length; i++) {
+    if(arr[i].match(regex)){
+      final.push(arr[i]);
+    }
+  }
+  return final;
 };
 
 /* ------------------------------------------------------------------------------------------------
