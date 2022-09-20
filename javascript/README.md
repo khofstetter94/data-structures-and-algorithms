@@ -87,3 +87,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 ## Completed Code Challenges
 
 [array-reverse-code-challenge](/array-reverse/README.md)
+
+[array-insert-shift-code-challenge](/array-insert-shift/README.md)
