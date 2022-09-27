@@ -109,4 +109,38 @@ describe('LinkedList', () => {
     expect(list.head.next.next.value).toEqual(3);
     expect(list.head.next.next.next.value).toEqual(99);
   });
+  it('Where k is greater than the length of the linked list', () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    expect(list.kthFromEnd(8)).toBe('Invalid request');
+  });
+  it('Where k and the length of the list are the same', () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    expect(list.kthFromEnd(3)).toEqual('Invalid request');
+  });
+  it('Where k is not a positive integer', () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    expect(list.kthFromEnd(-2)).toEqual('Invalid request');
+  });
+  it('Where the linked list is of a size 1', () => {
+    let list = new LinkedList();
+    list.append(1);
+    expect(list.kthFromEnd(0)).toEqual(1);
+    expect(list.kthFromEnd(1)).toEqual('Invalid request');
+  });
+  it('Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
+    let list = new LinkedList();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    expect(list.kthFromEnd(1)).toEqual(2);
+  });
 });

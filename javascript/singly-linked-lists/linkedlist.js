@@ -104,14 +104,32 @@ class LinkedList {
       }
     }
   }
-}
 
-let list = new LinkedList();
-list.append(1);
-list.append(2);
-list.append(3);
-list.append(4);
-list.insertBefore(1, 5);
-console.log('populated list', list.toString());
+  kthFromEnd(k){
+    if(!this.head){
+      return 'Empty list';
+    }
+    let length = 0;
+    let current = this.head;
+
+    while(current){
+      current = current.next;
+      length++;
+    }
+
+    if(length <= k || k < 0){
+      return 'Invalid request';
+    }
+
+    current = this.head;
+
+    for(let i = 1; i < length - k; i++){
+      current = current.next;
+    }
+
+    console.log(current.value);
+    return current.value;
+  }
+}
 
 module.exports = LinkedList;

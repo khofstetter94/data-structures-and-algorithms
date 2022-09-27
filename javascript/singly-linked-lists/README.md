@@ -1,6 +1,6 @@
 # Singly Linked List
 
-A singly linked list is a linear collection of data where each piece of data is represented as a 'node'. The first node in a linked list is refered to as the head, and each node has reference to the next node in line with it's 'next' property. This challenge required the creation of methods that could insert a new node to the beginning of the line, check to see if a value exists in the list, write out all the values in the list in a readable way, append a new value to the end of a list, insert a new value before any given value, and insert any new value after any given value.
+A singly linked list is a linear collection of data where each piece of data is represented as a 'node'. The first node in a linked list is refered to as the head, and each node has reference to the next node in line with it's 'next' property. This challenge required the creation of methods that could insert a new node to the beginning of the line, check to see if a value exists in the list, write out all the values in the list in a readable way, append a new value to the end of a list, insert a new value before any given value, insert any new value after any given value, and find the kth value from the end of a linked list.
 
 ## Challenge
 
@@ -32,6 +32,9 @@ A singly linked list is a linear collection of data where each piece of data is 
     - insert after
       - arguments: value, new value
       - adds a new node with the given new value immediately after the first node that has the value specified
+    - kth from the end
+      - arguments: a number, k
+      - Returns the node’s value that is k places from the tail of the linked list
 
 ## Approach & Efficiency
 
@@ -53,6 +56,9 @@ A singly linked list is a linear collection of data where each piece of data is 
 - .insertAfter()
   - Approach: create a new node with the new value. Set a current variable to this.head and while there is a current, if the current.value equals the input value, set the node.next to the current.next and the current.next to the node - return. Else, set the current to the current.next and continue down the list.
   - BigO: O(n)
+- .kthFromEnd()
+  - Approach: If there is no this.head, return 'empty list'. Otherwise, set a variable called length to 0 and set current to this.head. While there is a current, traverse down the linked list while incrementing the length so that you find the length of the linked list. If the length is less than OR equal to the value of k OR k is less than 0, return 'invalid request'. Set current again to this.head. Use a for loop to traverse down the linked list until you match the value of k, return current.value.
+  - BigO(n^2)
 
 ## API
 
@@ -62,3 +68,4 @@ A singly linked list is a linear collection of data where each piece of data is 
 - .append(): takes in a value and adds that value to the end of the linked list.
 - .insertBefore(): takes in a value and a new value, then inserts the new value before the input value in the linked list.
 - .insertAfter(): takes in a value and a new value, then inserts the new value after the input value in the linked list.
+- .kthFromEnd(): takes in a number (k) and finds the node value that is kth places from the end of the linked list.
