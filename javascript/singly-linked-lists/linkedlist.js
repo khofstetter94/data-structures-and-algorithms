@@ -51,6 +51,67 @@ class LinkedList {
     }
     return str + 'NULL';
   }
+
+  append(value){
+    const node = new Node(value);
+
+    if(!this.head){
+      this.head = node;
+      return;
+    }
+
+    let current = this.head;
+    while(current.next){
+      current = current.next;
+    }
+
+    current.next = node;
+  }
+
+  insertBefore(value, newValue){
+    const node = new Node(newValue);
+
+    let current = this.head;
+
+    if(current.value === value){
+      node.next = current;
+      this.head = node;
+      return;
+    }
+
+    while(current){
+      if(current.next && current.next.value === value){
+        node.next = current.next;
+        current.next = node;
+        return;
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
+  insertAfter(value, newValue){
+    const node = new Node(newValue);
+
+    let current = this.head;
+    while(current){
+      if(current.value === value){
+        node.next = current.next;
+        current.next = node;
+        return;
+      } else {
+        current = current.next;
+      }
+    }
+  }
 }
+
+let list = new LinkedList();
+list.append(1);
+list.append(2);
+list.append(3);
+list.append(4);
+list.insertBefore(1, 5);
+console.log('populated list', list.toString());
 
 module.exports = LinkedList;
