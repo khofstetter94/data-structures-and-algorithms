@@ -89,3 +89,7 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [array-reverse-code-challenge](/array-reverse/README.md)
 
 [array-insert-shift-code-challenge](/array-insert-shift/README.md)
+
+[singly-linked-lists-code-challenge](/singly-linked-lists/README.md)
+
+[linked-list-zip-code-challenge](/linked-list-zip/README.md)
