@@ -1,9 +1,8 @@
 'use strict';
 
-let Stack = require('./stackandqueue');
-let Queue = require('./stackandqueue');
+let { Stack, Queue } = require('./stackandqueue');
 
-describe('LinkedList', () => {
+describe('Stack', () => {
   it('Can successfully push onto a stack', () => {
     let stack = new Stack();
     stack.push(1);
@@ -46,6 +45,9 @@ describe('LinkedList', () => {
     expect(stack.pop()).toEqual('empty stack');
     expect(stack.peek()).toEqual('empty stack');
   });
+});
+
+describe('Queue', () => {
   it('Can successfully enqueue into a queue', () => {
     let queue = new Queue();
     queue.enqueue(1);
