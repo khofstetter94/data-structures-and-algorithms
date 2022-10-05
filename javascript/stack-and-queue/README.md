@@ -89,7 +89,7 @@ A queue is a data structure that consists of Nodes. Each Node references the nex
   - Approach: create a new node with the new value. Set a current variable to this.head and while there is a current, if the current.value equals the input value, set the node.next to the current.next and the current.next to the node - return. Else, set the current to the current.next and continue down the list.
   - BigO: O(n)
 - .kthFromEnd()
-  - Approach: If there is no this.head, return 'empty list'. Otherwise, set a variable called length to 0 and set current to this.head. While there is a current, traverse down the linked list while incrementing the length so that you find the length of the linked list. If the length is less than OR equal to the value of k OR k is less than 0, return 'invalid request'. Set current again to this.head. Use a for loop to traverse down the linked list until you match the value of k, return current.value.
+  - Approach: If there is no this.head, return 'empty list'. Otherwise, set a variable called length to 0 and set current to this.head. While there is a current, traverse down the linked list while incrementing the length so that you find the length of the linked list. If the length is less than OR equal to the value of k OR k is less than 0, return 'invalid request'. Set current again to this.head. Use a for loop to traverse down the linked list until you match the value of k, return current.value
   - BigO(n^2)
 
 ## API
