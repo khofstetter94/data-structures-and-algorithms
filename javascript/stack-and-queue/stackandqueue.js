@@ -20,11 +20,7 @@ class Stack {
       return;
     }
 
-    let current = this.top;
-    while(current){
-      node.next = current;
-    }
-
+    node.next = this.top;
     this.top = node;
   }
 

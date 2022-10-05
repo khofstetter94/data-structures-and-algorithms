@@ -93,3 +93,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [singly-linked-lists-code-challenge](/singly-linked-lists/README.md)
 
 [linked-list-zip-code-challenge](/linked-list-zip/README.md)
+
+[multi-bracket-validation](./multi-bracket-validation/README.md)
