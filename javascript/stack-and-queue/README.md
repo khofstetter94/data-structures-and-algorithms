@@ -56,6 +56,17 @@ A queue is a data structure that consists of Nodes. Each Node references the nex
   - dequeue
     - Arguments: none
     - Extracts a value from the PseudoQueue, using a first-in, first-out approach.
+- Create a class called AnimalShelter which holds only dogs and cats.
+- The shelter operates using a first-in, first-out approach.
+- Implement the following methods:
+  - enqueue
+    - Arguments: animal
+      - animal can be either a dog or a cat object.
+  - dequeue
+    - Arguments: pref
+      - pref can be either "dog" or "cat"
+    - Return: either a dog or a cat, based on preference.
+      - If pref is not "dog" or "cat" then return null.
 
 ## Approach & Efficiency
 
@@ -109,7 +120,15 @@ A queue is a data structure that consists of Nodes. Each Node references the nex
   - .isEmpty()
     - Approach: if this.front strictly equals null, return true, else return false.
     - BigO: O(1)
+- Animal Shelter Queue Class
+  - .enqueue(animal)
+    - Approach: Takes in a cat or a dog, if this.front is empty then sets this.front to the animal. Set variable current to this.front, and while there is a current.next, set current to current.next, then set current.next to the animal.
+    - BigO: O(n)
+  - .dequeue()
+    - Approach: Takes in a preference (cat or dog), and if there is not this.front, then return 'no pets available'. Otherwise, if this.front.value strictly equals the preference, then set variable val to this.front.value, then set this.front to this.front.next, then return val. Then, set prev to this.front and set current to this.front.next. While a current exists, if preferene strictly equals the current.value, set chosen to current and set prev.next to chosen.next, then return chosen.value. Else, set prev to current and then set current to current.next. If nothing catches, return null.
+    - BigO: O(n)
 
 ## Whiteboard for PseudoQueue
 
 ![Whiteboard for pseudoqueue](./img/pseudoqueue.png)
+![Animal Shelter Queue Whiteboard](./img/animalshelterWhiteboard.png)
