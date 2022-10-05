@@ -72,7 +72,7 @@ class Queue {
       return;
     }
 
-    let current = this.top;
+    let current = this.front;
     while(current.next){
       current = node.next;
       this.rear = current.next;
