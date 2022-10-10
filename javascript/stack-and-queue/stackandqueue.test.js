@@ -2,7 +2,7 @@
 
 let { Stack, Queue } = require('./stackandqueue');
 
-describe('Stack', () => {
+describe.skip('Stack', () => {
   it('Can successfully push onto a stack', () => {
     let stack = new Stack();
     stack.push(1);
@@ -47,7 +47,7 @@ describe('Stack', () => {
   });
 });
 
-describe('Queue', () => {
+describe.skip('Queue', () => {
   it('Can successfully enqueue into a queue', () => {
     let queue = new Queue();
     queue.enqueue(1);
