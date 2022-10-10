@@ -65,4 +65,14 @@ describe('LinkedList', () => {
     expect(tree.contains(10)).toEqual(true);
     expect(tree.contains(99)).toEqual(false);
   });
+  it('Can successfully return the highest number in a binary tree', () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(15);
+    tree.root.left = new Node(10);
+    tree.root.right = new Node(18);
+    tree.root.left.left = new Node(6);
+    tree.root.left.right = new Node(12);
+    tree.root.right.right = new Node(20);
+    expect(tree.maxValue()).toEqual(20);
+  });
 });

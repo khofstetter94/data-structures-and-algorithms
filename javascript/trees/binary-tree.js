@@ -50,6 +50,24 @@ class BinaryTree {
     traverse(this.root);
     return arr;
   }
+
+  maxValue() {
+    let maxNum = 0;
+    let current = this.root;
+    const traverse = (node) => {
+      if(node.value > maxNum){
+        maxNum = node.value;
+      }
+      if (node.left) {
+        traverse(node.left);
+      }
+      if (node.right) {
+        traverse(node.right);
+      }
+    };
+    traverse(current);
+    return maxNum;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
