@@ -31,3 +31,23 @@
 - .postOrder(): traverses a binary tree in this order - left, right, root, returns an array of the values
 - .add(): adds a node with the inserted value into a binary search tree in the appropriate spot
 - .contains(): takes in a value and checks if that value exists in a binary search tree
+
+## Challenge 16 - Maximum Value Method
+
+- Write the following method for the Binary Tree class
+  - find maximum value
+    - Arguments: none
+    - Returns: number
+- Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+## Whiteboard Process
+
+![maxNum whiteboard](./img/maxnum-uml.png)
+
+## Approach & Efficiency
+
+- First I set a temp variable to hold reference to the current highest number. Then I chose to traverse the tree in a preOrder fashion, comparing each node's value to the temp variable's value. If the node's value was higher, then I would set the temp variable to that node's value. Once the traversal ended, I would return the temp variable. The BigO for both time and space is O(n).
+
+## Solution
+
+- Create a binary tree, then use the method .maxValue with no arguments, the return will be a single integer that is the largest number in the tree
