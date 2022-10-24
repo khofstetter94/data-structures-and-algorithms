@@ -97,3 +97,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [multi-bracket-validation](./multi-bracket-validation/README.md)
 
 [binary-trees](./trees/README.md)
+
+[insertion-sort](./sorting/insertion/README.md)
