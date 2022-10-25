@@ -99,3 +99,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [binary-trees](./trees/README.md)
 
 [insertion-sort](./sorting/insertion/README.md)
+
+[merge-sort](./sorting/merge/README.md)

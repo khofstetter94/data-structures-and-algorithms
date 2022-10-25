@@ -42,7 +42,7 @@ The for loop increments and the steps repeat. When the for loop comes to an end,
 
 ### View the Code
 
-[insertionSort](./index.js)
+[insertionSort](./insertionSort.js)
 
 ## Challenge Summary
 
