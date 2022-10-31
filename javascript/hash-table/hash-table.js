@@ -1,5 +1,6 @@
 'use strict';
 
+const { LinkedList } = require('../singly-linked-lists/linkedlist');
 
 class HashTable {
   constructor (size) {
@@ -49,3 +50,5 @@ class HashTable {
 
   }
 }
+
+module.exports = HashTable;

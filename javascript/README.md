@@ -103,3 +103,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [merge-sort](./sorting/merge/README.md)
 
 [sort-and-filter-movies](./sorting/sort-and-filter-movies/README.md)
+
+[hashmap-repeated-word](./hash-table/repeated-word/README.md)
