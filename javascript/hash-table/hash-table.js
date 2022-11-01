@@ -1,7 +1,5 @@
 'use strict';
 
-const { LinkedList } = require('../singly-linked-lists/linkedlist');
-
 class HashTable {
   constructor (size) {
     this.size = size;
@@ -21,15 +19,7 @@ class HashTable {
   set(key, value){
     let position = this.hash(key);
     let data = {[key]: value};
-
-    if(this.buckets[position]){
-      let bucket = this.buckets[position];
-      bucket.add(data);
-    } else {
-      let bucket = new LinkedList();
-      bucket.add(data);
-      this.buckets[position] = bucket;
-    }
+    this.buckets[position] = data;
   }
 
   get(key){
@@ -37,18 +27,26 @@ class HashTable {
 
     if(this.buckets[position]){
       let bucket = this.buckets[position];
-      let value = bucket.head.value[key];
+      let value = bucket[key];
       return value;
     }
   }
 
-  has(){
-
+  has(key) {
+    let position = this.hash(key);
+    if (this.buckets[position] &&
+        this.buckets[position][key]
+    ) {
+      return true;
+    }
+    return false;
   }
 
   keys(){
-
+    return this.buckets.filter(bucket => bucket).map(bucket => {
+      return Object.keys(bucket)[0];
+    });
   }
 }
 
-module.exports = HashTable;
+module.exports = { HashTable };

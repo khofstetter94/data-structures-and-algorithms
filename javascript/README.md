@@ -105,3 +105,5 @@ Note that when you check your code into GitHub, all of your tests will automatic
 [sort-and-filter-movies](./sorting/sort-and-filter-movies/README.md)
 
 [hashmap-repeated-word](./hash-table/repeated-word/README.md)
+
+[tree-intersection](./tree-intersection/README.md)
