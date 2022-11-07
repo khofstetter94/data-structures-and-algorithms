@@ -1,6 +1,7 @@
 # Graphs
 
 - Authors: KC Hofstetter
+- Followed along coding during lecture w/ Ryan Gallaway
 
 ## Challenge
 
