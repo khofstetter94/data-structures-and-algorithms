@@ -77,4 +77,31 @@ describe('graph', () => {
 
   //   expect(graph).toBe(`{"adjacencyList": Map {{"value": "A"} => []}}`);
   // });
+  it('can traverse a graph with breadth first traversal', () => {
+    const { Graph } = require('./graph');
+    const graph = new Graph();
+
+    const A = graph.addVertex('A');
+    const B = graph.addVertex('B');
+    const C = graph.addVertex('C');
+    const D = graph.addVertex('D');
+    const E = graph.addVertex('E');
+    const F = graph.addVertex('F');
+    const G = graph.addVertex('G');
+    const H = graph.addVertex('H');
+
+    graph.addDirectedEdge(A, B);
+    graph.addDirectedEdge(A, D);
+    graph.addDirectedEdge(A, C);
+    graph.addDirectedEdge(B, G);
+    graph.addDirectedEdge(D, F);
+    graph.addDirectedEdge(D, H);
+    graph.addDirectedEdge(F, H);
+    graph.addDirectedEdge(C, H);
+    graph.addDirectedEdge(F, E);
+
+    let results = graph.breadthFirst(A, console.log);
+
+    expect(results).toBe(`Set {{"value": "A"}, {"value": "B"}, {"value": "D"}, {"value": "C"}, {"value": "G"}, {"value": "F"}, {"value": "H"}, {"value": "E"}}`);
+  });
 });

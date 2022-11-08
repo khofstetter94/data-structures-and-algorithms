@@ -26,7 +26,7 @@ class Graph{
 
   addDirectedEdge(startVertex, endVertex, weight = 0){
     const neighbors = this.adjacencyList.get(startVertex);
-    neighbors.push(endVertex, weight);
+    neighbors.push(new Edge(endVertex, weight));
   }
 
   getNeighbors(vertex){
@@ -106,8 +106,6 @@ graph.addDirectedEdge(D, H);
 graph.addDirectedEdge(F, H);
 graph.addDirectedEdge(C, H);
 graph.addDirectedEdge(F, E);
-
-console.log(graph.getNodes());
 
 
 module.exports = { Graph, Edge };
