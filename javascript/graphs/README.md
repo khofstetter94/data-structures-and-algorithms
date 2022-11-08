@@ -88,3 +88,7 @@ breadthFirst(root, callback)
 ```js
 depthFirst(root, cb)
 ```
+
+## Whiteboard
+
+![Breadth-first-UML](./img/breadth-first-uml.png)
