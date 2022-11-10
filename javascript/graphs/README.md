@@ -30,6 +30,10 @@
   - Arguments: none
   - Returns the total number of nodes in the graph
   - 0 if there are none
+- depthFirst
+  - Arguments: Node (Starting point of search)
+  - Return: A collection of nodes in their pre-order depth-first traversal order
+  - Program output: Display the collection
 
 ## Solution
 
@@ -92,3 +96,4 @@ depthFirst(root, cb)
 ## Whiteboard
 
 ![Breadth-first-UML](./img/breadth-first-uml.png)
+![Depth-first-UML](./img/depth-first-uml.png)
